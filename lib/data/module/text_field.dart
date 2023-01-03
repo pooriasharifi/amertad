@@ -5,6 +5,7 @@ import 'package:get/get.dart';
 
 import 'constans.dart';
 
+// ignore: must_be_immutable
 class TxtField extends StatelessWidget {
   TxtField(
       {Key? key,

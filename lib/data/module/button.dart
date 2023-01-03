@@ -3,6 +3,7 @@ import 'package:get/get.dart';
 
 import 'constans.dart';
 
+// ignore: must_be_immutable
 class Btn extends StatefulWidget {
   Btn(
       {Key? key,
@@ -55,7 +56,7 @@ class _BtnState extends State<Btn> {
             borderRadius: BorderRadius.circular(5),
             border: widget.hasBorder!
                 ? Border.all(color: ColorSelecet.primery)
-                : Border.fromBorderSide(BorderSide.none)),
+                : const Border.fromBorderSide(BorderSide.none)),
         child: Container(
           alignment: widget.alignmentGeometry ?? Alignment.center,
           child: widget.child ??
