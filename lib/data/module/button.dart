@@ -42,8 +42,8 @@ class _BtnState extends State<Btn> {
             widget.onHover = value;
           })),
       child: Container(
-        height: widget.height ?? 45,
-        width: widget.width ?? Get.width / 5,
+        height: widget.height ?? 65,
+        width: widget.width ?? Get.width,
         decoration: BoxDecoration(
             color: widget.color ??
                 (widget.hasBorder == true

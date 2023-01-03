@@ -27,6 +27,7 @@ class TxtField extends StatelessWidget {
       this.suffixIcon,
       this.textInputAction,
       this.textStyle,
+      this.suffix,
       this.validator})
       : super(key: key);
 
@@ -48,17 +49,18 @@ class TxtField extends StatelessWidget {
   String? labelText;
   Color? fillColor;
   Icon? perfixIcon;
-  Icon? suffixIcon;
+  Widget? suffixIcon;
   TextStyle? hintStyle;
   TextStyle? labelStyle;
+  Widget? suffix;
 
   @override
   Widget build(BuildContext context) {
     return Directionality(
-        textDirection: textDirection ?? TextDirection.rtl,
+        textDirection: textDirection ?? TextDirection.ltr,
         child: SizedBox(
-          height: height ?? 50.0,
-          width: width ?? Get.width / 5,
+          height: height ?? 56.0,
+          width: width ?? Get.width,
           child: Form(
             key: formKey,
             child: TextFormField(
@@ -74,26 +76,27 @@ class TxtField extends StatelessWidget {
               style: textStyle ?? Get.textTheme.caption,
               obscureText: obsecureText ?? false,
               decoration: InputDecoration(
-                  hintText: hintText,
-                  labelText: labelText,
-                  hintStyle: hintStyle ?? Get.textTheme.subtitle2,
-                  labelStyle: labelStyle ?? Get.textTheme.subtitle2,
-                  filled: true,
-                  fillColor: fillColor ?? ColorSelecet.surface,
-                  prefixIcon: perfixIcon,
-                  suffixIcon: suffixIcon,
-                  enabledBorder: OutlineInputBorder(
-                      borderRadius: BorderRadius.circular(5),
-                      borderSide: BorderSide.none),
-                  border: OutlineInputBorder(
-                      borderSide: BorderSide.none,
-                      borderRadius: BorderRadius.circular(5)),
-                  focusedBorder: OutlineInputBorder(
-                    borderRadius: BorderRadius.circular(10),
-                    borderSide:
-                        BorderSide(color: ColorSelecet.primery, width: 1.5),
-                  ),
-                  hoverColor: ColorSelecet.surface),
+                hintText: hintText,
+                labelText: labelText,
+                hintStyle: hintStyle ?? Get.textTheme.subtitle2,
+                labelStyle: labelStyle ?? Get.textTheme.subtitle2,
+                filled: true,
+                fillColor: fillColor ?? ColorSelecet.white,
+                prefixIcon: perfixIcon,
+                suffixIcon: suffixIcon,
+                suffix: suffix,
+                enabledBorder: OutlineInputBorder(
+                    borderRadius: BorderRadius.circular(5),
+                    borderSide: BorderSide(color: ColorSelecet.borderSide)),
+                border: OutlineInputBorder(
+                    borderSide: BorderSide.none,
+                    borderRadius: BorderRadius.circular(5)),
+                focusedBorder: OutlineInputBorder(
+                  borderRadius: BorderRadius.circular(10),
+                  borderSide:
+                      BorderSide(color: ColorSelecet.primery, width: 1.5),
+                ),
+              ),
             ),
           ),
         ));
