@@ -62,7 +62,7 @@ class LoginPage extends GetResponsiveView {
       TxtField(
         obsecureText: false,
         perfixIcon: Icon(
-          CupertinoIcons.add,
+          CupertinoIcons.person,
           color: ColorSelecet.black,
         ),
         keyboardType: TextInputType.emailAddress,

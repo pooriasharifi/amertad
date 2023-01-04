@@ -31,20 +31,15 @@ class MessagesPage extends GetResponsiveView {
     final MessageController controller = Get.put(MessageController());
 
     return Scaffold(
-      // floatingActionButton: Obx(
-      //   () =>controller.controller.index==0? FloatingActionButton(onPressed: null):,
-      // ),
       appBar: AppBar(
         title: Text(
           'Messages',
           style: Get.textTheme.caption,
         ),
-        actions: [
+        actions: const [
           Padding(
             padding: EdgeInsets.symmetric(horizontal: 30),
-            child: InkWell(
-                onTap: () => print(controller.controller.index),
-                child: Icon(CupertinoIcons.search)),
+            child: Icon(CupertinoIcons.search),
           )
         ],
       ),
@@ -53,7 +48,6 @@ class MessagesPage extends GetResponsiveView {
           TabBar(
             controller: controller.controller,
             tabs: controller.myTabs,
-            onTap: (value) => print(value),
             padding: const EdgeInsets.symmetric(vertical: 20),
             unselectedLabelColor: ColorSelecet.unSelectColortab,
             labelColor: ColorSelecet.primery,
@@ -64,19 +58,6 @@ class MessagesPage extends GetResponsiveView {
               const Center(child: Text('order')),
               const Center(child: Text('car'))
             ]),
-            // child: TabBarView(
-            //   controller: controller.controller,
-            //   children: controller.myTabs.map((Tab tab) {
-            //     final Widget icon = tab.icon!;
-            //     if (tab.child != null) {
-            //       return Center();
-            //     } else {
-            //       return Center(
-            //         child: icon,
-            //       );
-            //     }
-            //   }).toList(),
-            // ),
           ),
         ],
       ),

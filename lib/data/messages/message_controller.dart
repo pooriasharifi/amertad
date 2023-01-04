@@ -6,15 +6,10 @@ class MessageController extends GetxController
     with GetSingleTickerProviderStateMixin {
   int currentIndex = 0;
 
-  final List<Tab> myTabs = <Tab>[
+  final List<Tab> myTabs = const <Tab>[
     Tab(
       icon: Icon(
         CupertinoIcons.chat_bubble_fill,
-      ),
-      child: Column(
-        children: [
-          // FloatingActionButton(onPressed: null),
-        ],
       ),
     ),
     Tab(
