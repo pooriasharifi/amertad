@@ -16,29 +16,40 @@ class MainApplication extends GetView {
     return GetMaterialApp(
       debugShowCheckedModeBanner: false,
       theme: ThemeData(
+          appBarTheme: AppBarTheme(
+              backgroundColor: ColorSelecet.white,
+              foregroundColor: ColorSelecet.black,
+              centerTitle: false),
           scaffoldBackgroundColor: ColorSelecet.bg,
           textTheme: TextTheme(
-            headline1: TextStyle(
-                fontSize: 26,
-                color: ColorSelecet.text,
-                fontWeight: FontWeight.w700),
-            subtitle2: TextStyle(
-                fontSize: 16,
-                color: ColorSelecet.text,
-                fontWeight: FontWeight.w200),
-            caption: TextStyle(
-                fontSize: 16,
-                color: ColorSelecet.black,
-                fontWeight: FontWeight.w900),
-            headline2: TextStyle(
-                fontSize: 16,
-                color: ColorSelecet.primery,
-                fontWeight: FontWeight.w900),
-            button: TextStyle(
-                fontSize: 16,
-                color: ColorSelecet.white,
-                fontWeight: FontWeight.w900),
-          )),
+              headline1: TextStyle(
+                  fontSize: 26,
+                  color: ColorSelecet.text,
+                  fontWeight: FontWeight.w700),
+              subtitle2: TextStyle(
+                  fontSize: 16,
+                  color: ColorSelecet.text,
+                  fontWeight: FontWeight.w200),
+              caption: TextStyle(
+                  fontSize: 16,
+                  color: ColorSelecet.black,
+                  fontWeight: FontWeight.w900),
+              headline2: TextStyle(
+                  fontSize: 16,
+                  color: ColorSelecet.primery,
+                  fontWeight: FontWeight.w900),
+              button: TextStyle(
+                  fontSize: 16,
+                  color: ColorSelecet.white,
+                  fontWeight: FontWeight.w900),
+              headline3: TextStyle(
+                  fontSize: 15,
+                  color: ColorSelecet.primery,
+                  fontWeight: FontWeight.w700),
+              subtitle1: TextStyle(
+                  fontSize: 14,
+                  color: ColorSelecet.text,
+                  fontWeight: FontWeight.w200))),
       getPages: AppPages.pages,
       initialRoute: Routes.INITIAL,
       builder: (context, child) {

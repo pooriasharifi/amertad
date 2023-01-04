@@ -11,7 +11,6 @@ class ColorSelecet {
   static Color folder = const Color(0xFFFFC855);
   static Color indicator = const Color(0xFFC9E0FF);
   static Color black = const Color.fromARGB(255, 0, 0, 0);
-  static Color green = const Color(0xFF45CF8D);
   static Color pink = const Color(0xFFFF65D4);
 
   static Color primery = const Color(0xFF006AE9);
@@ -19,6 +18,9 @@ class ColorSelecet {
   static Color text = const Color.fromARGB(255, 0, 0, 0);
   static Color white = const Color(0xFFFFFFFF);
   static Color borderSide = const Color(0xFFE8E8EA);
+  static Color unSelectColortab = const Color(0xFFA5A3A9);
+  static Color green = const Color(0xFF57AE24);
+  static Color grey = const Color(0xFFD2D1D4);
 }
 
 MaterialColor generateMaterialColor(Color color) {
