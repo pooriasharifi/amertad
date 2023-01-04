@@ -34,6 +34,5 @@ okSnackBar({title, msg}) {
     animationDuration: const Duration(milliseconds: 550),
     duration: const Duration(seconds: 3),
     snackPosition: SnackPosition.TOP,
-    // margin: const EdgeInsets.all(90),
   );
 }

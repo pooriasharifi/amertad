@@ -20,10 +20,10 @@ class LoginController extends GetxController {
     res.then((value) async {
       var jsonResponse = jsonDecode(utf8.decode(value.bodyBytes));
       if (value.statusCode == 200) {
-        okSnackBar(title: '', msg: '${jsonResponse['status']}');
+        okSnackBar(title: 'YOHO', msg: '${jsonResponse['status']}');
         Get.toNamed(Routes.messages);
       } else {
-        errorSnackBar(title: 'خطا', msg: '${jsonResponse['message']}');
+        errorSnackBar(title: 'error', msg: '${jsonResponse['message']}');
       }
     });
   }
