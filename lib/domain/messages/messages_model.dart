@@ -52,17 +52,3 @@ class MessagesModel {
           status: e[5]))
       .toList();
 }
-
-
-
-//  static List<CandleData> get candles => _rawData
-//       .map((row) => CandleData(
-//             timestamp: row[0] * 1000,
-//             open: row[1]?.toDouble(),
-//             high: row[2]?.toDouble(),
-//             low: row[3]?.toDouble(),
-//             close: row[4]?.toDouble(),
-//             volume: row[5]?.toDouble(),
-//           ))
-//       .toList();
-// }
