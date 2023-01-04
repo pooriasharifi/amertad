@@ -1,3 +1,5 @@
+import 'dart:convert';
+
 import 'package:amertad/data/login/login_page_controller.dart';
 import 'package:amertad/data/module/button.dart';
 import 'package:amertad/data/module/constans.dart';
@@ -11,7 +13,6 @@ import 'package:get/get.dart';
 class LoginPage extends GetResponsiveView {
   @override
   LoginController controller = Get.put(LoginController());
-
   LoginPage({super.key});
 
   @override
@@ -35,6 +36,7 @@ class LoginPage extends GetResponsiveView {
 
   Widget phoneLayote() {
     return GetBuilder<LoginController>(builder: (controller) {
+      Map data = {};
       return Scaffold(
         body: Padding(
           padding: EdgeInsets.symmetric(
@@ -42,14 +44,14 @@ class LoginPage extends GetResponsiveView {
           child: Column(
             mainAxisAlignment: MainAxisAlignment.center,
             crossAxisAlignment: CrossAxisAlignment.start,
-            children: loginComponent(controller),
+            children: loginComponent(controller, data),
           ),
         ),
       );
     });
   }
 
-  List<Widget> loginComponent(LoginController controller) {
+  List<Widget> loginComponent(LoginController controller, data) {
     return <Widget>[
       const Spacer(),
       Text(
@@ -60,6 +62,10 @@ class LoginPage extends GetResponsiveView {
         height: 45,
       ),
       TxtField(
+        onSaved: (value) {
+          data['identifier'] = value.toString();
+        },
+        formKey: keys.key1,
         obsecureText: false,
         perfixIcon: Icon(
           CupertinoIcons.person,
@@ -73,6 +79,10 @@ class LoginPage extends GetResponsiveView {
         height: 15,
       ),
       TxtField(
+        onSaved: (value) {
+          data['password'] = value.toString();
+        },
+        formKey: keys.key2,
         obsecureText: controller.obsecure,
         perfixIcon: Icon(
           CupertinoIcons.lock,
@@ -103,7 +113,11 @@ class LoginPage extends GetResponsiveView {
         height: 40,
       ),
       InkWell(
-        onTap: () => Get.toNamed(Routes.messages),
+        onTap: () {
+          keys.key1.currentState!.save();
+          keys.key2.currentState!.save();
+          controller.signIn(jsonEncode(data));
+        },
         child: Btn(
           hasBorder: false,
           title: 'title',
@@ -142,4 +156,9 @@ class LoginPage extends GetResponsiveView {
       )
     ];
   }
+}
+
+class keys {
+  static final key1 = GlobalKey<FormState>();
+  static final key2 = GlobalKey<FormState>();
 }

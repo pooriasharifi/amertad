@@ -5,6 +5,7 @@ import 'package:amertad/data/service/server.dart';
 import 'package:get/get.dart';
 
 import '../module/snack.dart';
+import '../router/app_router.dart';
 
 class LoginController extends GetxController {
   bool obsecure = true;
@@ -19,6 +20,8 @@ class LoginController extends GetxController {
     res.then((value) async {
       var jsonResponse = jsonDecode(utf8.decode(value.bodyBytes));
       if (value.statusCode == 200) {
+        okSnackBar(title: '', msg: '${jsonResponse['status']}');
+        Get.toNamed(Routes.messages);
       } else {
         errorSnackBar(title: 'خطا', msg: '${jsonResponse['message']}');
       }
