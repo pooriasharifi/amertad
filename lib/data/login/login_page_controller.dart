@@ -1,5 +1,4 @@
 import 'dart:convert';
-import 'dart:io';
 
 import 'package:amertad/data/service/server.dart';
 import 'package:get/get.dart';
